@@ -12,39 +12,13 @@ def alunoView(request):
 
 
 def alunoIDview(request, id):
-    aluno = get_object_or_404(Aluno, pk=id)
-    print(aluno)
-    return render(request, 'main/alunoID.html', {'aluno': aluno})
+    pass
 
 
 def contact_view(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-        print(name)
-        print(email)
-        print(message)
-    return render(request, 'main/contact.html')
-
+    pass
 def aluno_create_view(request):
-    if request.method == 'POST':
-        form = AlunoForm(request.POST)
-        if form.is_valid():
-            aluno = form.save(commit=False)
-            aluno.user = request.user
-            aluno.save()
-            return redirect(reverse('aluno-lista'))
-    else:
-        form = AlunoForm()
-
-    return render(request, 'main/aluno_form.html', {'form': form})
-
+    pass
 
 class AlunoUpdateView(UpdateView):
-    model = Aluno
-    form_class = AlunoForm
-    template_name = 'main/aluno_form.html'
-    success_url = reverse_lazy('aluno-lista')
-
-    
+    pass
