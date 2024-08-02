@@ -12,13 +12,8 @@ def alunoView(request):
 
 
 def alunoIDview(request, id):
-    pass
+    aluno = get_object_or_404(Aluno, pk=id)
+    print(aluno)
+    return render(request, 'main/alunoID.html', {'aluno':aluno})
 
 
-def contact_view(request):
-    pass
-def aluno_create_view(request):
-    pass
-
-class AlunoUpdateView(UpdateView):
-    pass
